@@ -1,8 +1,10 @@
 # emojily
 
 [![Build Status](https://travis-ci.com/zmofei/emojily.svg?branch=master)](https://travis-ci.com/zmofei/emojily) [![codecov](https://codecov.io/gh/zmofei/emojily/branch/master/graph/badge.svg)](https://codecov.io/gh/zmofei/emojily) 
-![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
-![npm](https://img.shields.io/npm/v/emojily.svg)
+
+[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
+
+[![npm](https://img.shields.io/npm/v/emojily.svg)](https://www.npmjs.com/package/emojily)
 
 
 Encode/Decode engine for text to emoji
