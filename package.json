@@ -1,0 +1,31 @@
+{
+    "name": "emojily",
+    "version": "1.0.0",
+    "description": "transfer both text to emoji and emoji to text",
+    "main": "index.js",
+    "scripts": {
+        "test": "tape test/*.test.js",
+        "coverage": "nyc --reporter html tape test/*.test.js && opener coverage/index.html"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zmofei/emojily.git"
+    },
+    "keywords": [
+        "emoji",
+        "text",
+        "transfer",
+        "convert"
+    ],
+    "author": "Mofei Zhu <https://hiMofei.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/zmofei/emojily/issues"
+    },
+    "homepage": "https://github.com/zmofei/emojily#readme",
+    "devDependencies": {
+        "nyc": "^13.0.1",
+        "opener": "^1.5.1",
+        "tape": "^4.9.1"
+    }
+}
