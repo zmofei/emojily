@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": " nyc tape test/*.test.js | tap-spec",
+	"webpack": "webpack --config webpack.config.js",
         "coverage": "nyc --reporter html tape test/*.test.js && opener coverage/index.html",
         "upload-coverage": "nyc report --reporter json && codecov -f ./coverage/coverage-final.json"
     },
@@ -29,6 +30,8 @@
         "nyc": "^13.0.1",
         "opener": "^1.5.1",
         "tap-spec": "^5.0.0",
-        "tape": "^4.9.1"
+        "tape": "^4.9.1",
+        "webpack": "^4.19.1",
+        "webpack-cli": "^3.1.0"
     }
 }
