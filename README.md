@@ -13,6 +13,12 @@ Encode/Decode engine for text to emoji
 npm install emojily --save
 ```
 
+or use from CDN for browser
+
+```html
+<srcipt type="text/javascript" src="https://cdn.rawgit.com/zmofei/emojily/master/dist/emojily.js"></script>
+```
+
 2. encode text to emoji
 
 ```javascript
