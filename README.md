@@ -5,7 +5,10 @@
 
 Encode/Decode engine for text to emoji
 
+[Try it online 😛](https://zmofei.github.io/emojily/example/index.html) 
+
 # Usage
+
 
 1. Install 
 
