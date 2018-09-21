@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>The example of emojily</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../dist/emojily.js"></script>
+    <style>
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        
+        h1 {
+            height: 100px;
+            line-height: 100px;
+            overflow: hidden;
+            position: relative;
+            overflow: hidden;
+            background: #222;
+            color: white;
+            margin: 0;
+        }
+        
+        h2 {
+            text-align: center;
+            font-weight: 200;
+            line-height: 38px;
+            margin: 40px auto 0;
+            font-size: 21px;
+            max-width: 740px;
+            margin-bottom: 40px;
+        }
+        
+        textarea {
+            border: 1px solid #ccc;
+            color: #666;
+        }
+        
+        button {
+            border: 1px solid #eee;
+            background: #f4f3f3;
+            border-radius: 4px;
+            color: #999;
+        }
+        
+        button:hover {
+            color: #333;
+            cursor: pointer;
+            background: #eee;
+        }
+        
+        .demoarea {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .demoarea textarea {
+            width: 300px;
+            height: 100px;
+            font-size: 20px;
+            padding: 10px;
+        }
+        
+        .buttonarea {
+            display: inline-block;
+            width: 80px;
+            height: 100px;
+            padding-top: 20px;
+        }
+        
+        .buttonarea button {
+            vertical-align: middle;
+            float: left;
+            height: 30px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to emojily! <span id="h1txt"></span></h1>
+    <h2>Emojily is a tool that transfor text into emoji text, If you want to whisper to some beautiful girl, if you want you file names emojily or anyother thins you want play with emoji, please have fun!</h2>
+    <div class="demoarea">
+        <textarea id="encodetxt">Hello emojily!</textarea>
+        <div class="buttonarea">
+            <button id="encodebtn">encode ➡️</button>
+            <button id="decodebtn">⬅️ decode</button>
+        </div>
+        <textarea id="decodetxt" placeholder="You emojis here, while you encode the text 😅😃😂😃😘😃😞😁😍😃😎😃😖😃😘😃😓😃😒😃😜😁😍😃😑😃😎😃😛😃😎😁😙😁😍😃😠😃😑😃😒😃😕😃😎😁😍😄😀😃😘😃😞😁😍😃😎😃😗😃😌😃😘😃😍😃😎😁😍😃😝😃😑😃😎😁😍😃😝😃😎😃😡😃😝😏"></textarea>
+    </div>
+    <script>
+        //
+        const h1txt = document.querySelector('#h1txt');
+        h1txt.innerText = emojily.encode('Emojily!');
+        //
+        const encodeBtn = document.querySelector('#encodebtn');
+        const decodeBtn = document.querySelector('#decodebtn');
+        const encodeTxt = document.querySelector('#encodetxt');
+        const decodeTxt = document.querySelector('#decodetxt');
+
+        encodeBtn.addEventListener('click', () => {
+            const txt = encodeTxt.value;
+            if (txt != '') {
+                decodeTxt.value = emojily.encode(txt);
+            }
+        });
+
+        decodeBtn.addEventListener('click', () => {
+            const txt = decodeTxt.value;
+            if (txt != '') {
+                encodeTxt.value = emojily.decode(txt);
+            }
+        });
+    </script>
+</body>
+
+</html>
