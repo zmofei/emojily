@@ -17,13 +17,14 @@ const encode = (sentence, key) => {
     const codes = strArr.map((str, index) => {
         // this step is to get the char code
         const strCodeNum = str.codePointAt();
+        
 
         checkCode += (strCodeNum + index);
         let strCodeStr = (strCodeNum + offset).toString(numBit);
 
         // to make the str at 2 bit, like 1 -> 01
         strCodeStr = `0000${strCodeStr}`.slice(-4);
-        // console.log(str, strCodeNum, strCodeStr);
+        console.log(str, strCodeNum, strCodeStr);
 
         // return like "😃😕"
         return strCodeStr.split('').map(item => {

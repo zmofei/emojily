@@ -31,9 +31,17 @@ const decode = (sentence, key) => {
         }
 
         // console.log(strCodeSingleArr)
-        strCodeSingleArr = strCodeSingleArr.map(code => {
-            return String.fromCodePoint(parseInt(code, numBit) - offset)
-        });
+        let err = false;
+        try {
+            strCodeSingleArr = strCodeSingleArr.map(code => {
+                return String.fromCodePoint(parseInt(code, numBit) - offset)
+            });
+        } catch (e) {
+            err = true;
+        }
+        if (err) {
+            return 'Error Input, Please do not try to change any character!';
+        }
 
         const retStr = strCodeSingleArr.join('');
 
