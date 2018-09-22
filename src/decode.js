@@ -22,12 +22,15 @@ const decode = (sentence, key) => {
 
         //
         let strCodeSingleArr = [];
-        for (var i = 0; i < strArr.length; i += 2) {
+        for (var i = 0; i < strArr.length; i += 4) {
             const firstCode = (strArr[i].codePointAt() - emojiStart).toString(numBit);
             const secondCode = (strArr[i + 1].codePointAt() - emojiStart).toString(numBit);
-            strCodeSingleArr.push(firstCode + secondCode);
+            const thridCode = (strArr[i + 2].codePointAt() - emojiStart).toString(numBit);
+            const fourthCode = (strArr[i + 3].codePointAt() - emojiStart).toString(numBit);
+            strCodeSingleArr.push(firstCode + secondCode + thridCode + fourthCode);
         }
 
+        // console.log(strCodeSingleArr)
         strCodeSingleArr = strCodeSingleArr.map(code => {
             return String.fromCodePoint(parseInt(code, numBit) - offset)
         });
@@ -35,8 +38,8 @@ const decode = (sentence, key) => {
         const retStr = strCodeSingleArr.join('');
 
         let checkNum = offset;
-        strCodeSingleArr.forEach(str => {
-            checkNum += str.codePointAt();
+        strCodeSingleArr.forEach((str, index) => {
+            checkNum += str.codePointAt() + index;
         });
 
         const usedCheckCode = checkNum.toString(numBit).slice(-1);
