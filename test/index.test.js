@@ -31,6 +31,12 @@ test('test decode with error input', (assert) => {
     assert.end();
 });
 
+test('test decode with error input', (assert) => {
+    assert.equal('Error Input, Please do not try to change any character!', decode('😈😀😀😀😀😜'));
+    assert.end();
+});
+
+
 test('test decode with changed input', (assert) => {
     assert.equal('Error Input, Please do not try to change any character', decode('😌😀😀😃😐😀😃😀😍😀😀😃😔😀😀😃😔😀😀😃😗😀😀😀😘😎'));
     assert.end();
