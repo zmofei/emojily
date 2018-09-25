@@ -5,9 +5,12 @@
     "main": "index.js",
     "scripts": {
         "test": " nyc tape test/*.test.js | tap-spec",
-	"webpack": "webpack --config webpack.config.js",
+        "webpack": "webpack --config webpack.config.js",
         "coverage": "nyc --reporter html tape test/*.test.js && opener coverage/index.html",
         "upload-coverage": "nyc report --reporter json && codecov -f ./coverage/coverage-final.json"
+    },
+    "bin": {
+        "emojily": "bin/cli.js"
     },
     "repository": {
         "type": "git",

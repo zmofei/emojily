@@ -17,7 +17,7 @@ const makeid = () => {
 }
 
 
-for (let round = 0; round < 10; round += 1) {
+for (let round = 0; round < 1; round += 1) {
     test(`test emoji encoding/decodeing round ${round + 1} for ${makeid()}`, (assert) => {
         const testwords = 'hello, nice to meet you';
         const encoded = encode(testwords);
@@ -31,17 +31,22 @@ test('test decode with error input', (assert) => {
     assert.end();
 });
 
+test('test decode with error input', (assert) => {
+    assert.equal('Error Input, Please do not try to change any character!', decode('😈😀😀😀😀😜'));
+    assert.end();
+});
+
+
 test('test decode with changed input', (assert) => {
-    assert.equal('Error Input, Please do not try to change any character', decode('😘😃😐😄😌😃😄😜😀😃😠😡'));
+    assert.equal('Error Input, Please do not try to change any character', decode('😌😀😀😃😐😀😃😀😍😀😀😃😔😀😀😃😔😀😀😃😗😀😀😀😘😎'));
     assert.end();
 });
 
 
 
 test(`test commend from slack`, (assert) => {
-    const slackText = ':smiley::smiley::expressionless::smiley::sunglasses::smiley::confused::smiley::confused::smiley::kissing_heart::smirk:';
-    const emojiText = '😃😃😑😃😎😃😕😃😕😃😘😏'
+    const slackText = ':unamused::grinning::grinning::joy::smiling_imp::grinning::grinning::grin::smiley::stuck_out_tongue:';
     // const encoded = encode(testwords);
-    assert.equal(decode(slackText), decode(emojiText));
+    assert.equal('Error Input, Please do not try to change any character', decode(slackText));
     assert.end();
 });
