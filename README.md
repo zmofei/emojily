@@ -18,7 +18,7 @@ npm install emojily --save
 
 or use from CDN for browser
 
-```html
+```
 <srcipt type="text/javascript" src="https://cdn.rawgit.com/zmofei/emojily/master/dist/emojily.js"></script>
 ```
 
