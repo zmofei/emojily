@@ -1,6 +1,6 @@
 {
     "name": "emojily",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "transfer both text to emoji and emoji to text",
     "main": "index.js",
     "scripts": {
